@@ -129,7 +129,7 @@ $(document).ready(function () {
             autoplaySpeed: 2000,
         });
     }
-    else if (selling >= 920) {
+    else if (selling >= 740) {
         $('.autoplay').slick({
             slidesToShow: 4,
             slidesToScroll: 1,
@@ -137,7 +137,7 @@ $(document).ready(function () {
             autoplaySpeed: 2000
         });
     }
-    else if (selling >= 400) {
+    else if (selling >= 320) {
         console.log(selling)
         $('.autoplay').slick({
             slidesToShow: 3,
