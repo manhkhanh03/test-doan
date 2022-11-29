@@ -337,6 +337,18 @@
     position: relative;
 }
 
+.btn-like {
+    top: 2%;
+    left: 2%;
+    color: #d7d7d7;
+    position: absolute;
+}
+
+.btn-like:hover {
+    transform: scale(1.2);
+    transition: .25s ease;
+}
+
 .see-more {
     text-align: center;
     margin: 20px 0;
@@ -941,10 +953,6 @@
     bottom: 6%;
     display: flex;
     justify-content: center;
-}
-
-.pink {
-    color: #ff1a40;
 }
 
 @media (min-width: 1px) {
