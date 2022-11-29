@@ -616,7 +616,8 @@ button {
 }
 
 @media (min-width: 420px) {
-    .box-product {
+    .box-product,
+    .modifier {
         max-width: 32.3333%;
         max-height: 66%;
         flex-basis: 32.3333%;
