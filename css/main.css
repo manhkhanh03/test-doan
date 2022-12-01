@@ -1435,7 +1435,7 @@
     }
 
     .box-brand img {
-        height: 62.66px;
+        height: 58.66px;
     }
 
     .box-brand p {
@@ -1545,5 +1545,13 @@
 
     .body .brand {
         font-size: 14px;
+    }
+
+    .box-brand img {
+        height: 36.66px;
+    }
+
+    .box-brand p {
+        font-size: 10px;
     }
 }

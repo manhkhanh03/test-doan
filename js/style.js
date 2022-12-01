@@ -270,7 +270,6 @@ function sortFilter() {
 }
 
 // Ẩn phong cách
-
 $(document).ready(function () {
     var more = $('.more').toArray()
     var style = $('.style').toArray()
