@@ -98,7 +98,7 @@ function focusInput(windowWidth) {
 
 // hien thi thanh navbar
 function grow(windowWidth) {
-    if (windowWidth >= 1024)
+    if (windowWidth > 1024)
         document.getElementById('navbar-btn').style.display = 'flex'
     else {
         document.getElementById('navbar-btn').style.display = 'none'
