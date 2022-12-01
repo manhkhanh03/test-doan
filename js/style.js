@@ -39,6 +39,44 @@ $(document).ready(function () {
     })
 })
 
+$(document).ready(function () {
+    function activeTab(ojb) {
+        $('.banner li').removeClass('active')
+
+        $(ojb).addClass('active')
+
+        let id = $(ojb).find('a').attr('href')
+
+        $('.body').hide();
+
+        $(id).show()
+    }
+
+    $('.banner li').click(function () {
+        activeTab(this)
+        return false
+    })
+}
+)
+$(document).ready(function () {
+    function activeTab(ojb) {
+        $('.brand-brand li').removeClass('active')
+
+        $(ojb).addClass('active')
+
+        let id = $(ojb).find('a').attr('href')
+
+        $('.body').hide();
+
+        $(id).show()
+    }
+
+    $('.brand-brand li').click(function () {
+        activeTab(this)
+        return false
+    })
+})
+
 
 
 // focus input
@@ -191,32 +229,33 @@ function unNavHidden() {
 unHidden();
 unNavHidden();
 
-
-// Bo loc
-// Ẩn bộ lọc
-function hiddenFilter() {
-    let hidden = document.getElementById('hidden')
-    let resultFilter = document.getElementById('result-filter')
-    let hiddenFilter = document.getElementById('hidden-filter')
-    let leftFilter = document.getElementById('left-filter')
-    let x = document.getElementById('x')
-
-    if (x.value == '0') {
-        hidden.style.display = 'unset';
-        resultFilter.style.width = '60%';
-        hiddenFilter.style.maxWidth = '20%';
-        hiddenFilter.style.minWidth = '255.82px';
-        leftFilter.style.display = 'block';
-        x.value = '1';
-    } else {
-        hidden.style.display = 'none';
-        resultFilter.style.width = '72%';
-        hiddenFilter.style.maxWidth = '2%';
-        hiddenFilter.style.minWidth = '40px';
-        leftFilter.style.display = 'none';
-        x.value = '0';
+// bo loc
+$(document).ready(function () {
+    var x = $('.x').toArray()
+    var hidden = $('.hidden').toArray()
+    var resultFilter = $('.result-filter').toArray()
+    var hiddenFilter = $('.hidden-filter').toArray()
+    var leftFilter = $('.left-filter').toArray()
+    for (let i = 0; i < x.length; i++) {
+        x[i].addEventListener('click', function () {
+            if (x[i].value == '0') {
+                hidden[i].style.display = 'unset'
+                resultFilter[i].style.width = '60%';
+                hiddenFilter[i].style.maxWidth = '20%';
+                hiddenFilter[i].style.minWidth = '255.82px';
+                leftFilter[i].style.display = 'block';
+                x[i].value = '1'
+            } else {
+                hidden[i].style.display = 'none';
+                resultFilter[i].style.width = '72%';
+                hiddenFilter[i].style.maxWidth = '2%';
+                hiddenFilter[i].style.minWidth = '40px';
+                leftFilter[i].style.display = 'none';
+                x[i].value = '0';
+            }
+        })
     }
-};
+})
 
 // Sắp xếp bộ lọc
 function sortFilter() {
@@ -231,47 +270,32 @@ function sortFilter() {
 }
 
 // Ẩn phong cách
-let minusOne = document.getElementById('minusOne')
-let plusOne = document.getElementById('plusOne')
-let styleOne = document.getElementById('styleOne')
-let minusTwo = document.getElementById('minusTwo')
-let plusTwo = document.getElementById('plusTwo')
-let styleTwo = document.getElementById('styleTwo')
-let minusThree = document.getElementById('minusThree')
-let plusThree = document.getElementById('plusThree')
-let styleThree = document.getElementById('styleThree')
 
-minusOne.addEventListener('click', function (event) {
-    event.currentTarget.style.display = 'none'
-    styleOne.style.display = 'none'
-    plusOne.style.display = 'block'
-})
-plusOne.addEventListener('click', function (event) {
-    event.currentTarget.style.display = 'none'
-    styleOne.style.display = 'flex'
-    minusOne.style.display = 'block'
-})
+$(document).ready(function () {
+    var more = $('.more').toArray()
+    var style = $('.style').toArray()
+    const minus = $('.more .fa-minus')
+    const plus = $('.more .fa-plus')
 
-minusTwo.addEventListener('click', function (event) {
-    event.currentTarget.style.display = 'none'
-    styleTwo.style.display = 'none'
-    plusTwo.style.display = 'block'
-})
-plusTwo.addEventListener('click', function (event) {
-    event.currentTarget.style.display = 'none'
-    styleTwo.style.display = 'flex'
-    minusTwo.style.display = 'block'
-})
-
-minusThree.addEventListener('click', function (event) {
-    event.currentTarget.style.display = 'none'
-    styleThree.style.display = 'none'
-    plusThree.style.display = 'block'
-})
-plusThree.addEventListener('click', function (event) {
-    event.currentTarget.style.display = 'none'
-    styleThree.style.display = 'flex'
-    minusThree.style.display = 'block'
+    for (let i = 0; i < more.length; i++) {
+        minus.addClass('block')
+        more[i].addEventListener('click', function () {
+            if (more[i].value == '0') {
+                console.log('manh')
+                more[i].value = '1'
+                style[i].style.display = 'flex'
+                minus[i].classList.add('block')
+                plus[i].classList.remove('block')
+            }
+            else {
+                console.log('khanh')
+                more[i].value = '0'
+                style[i].style.display = 'none'
+                plus[i].classList.add('block')
+                minus[i].classList.remove('block')
+            }
+        })
+    }
 })
 
 //heart

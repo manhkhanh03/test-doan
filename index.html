@@ -86,23 +86,33 @@
 
         <div class="body body-homepage" id="home-page">
             <!-- banner -->
-            <div class="banner single-item-rtl">
-                <a href="/html/nike.html"><img class="banner-img" src="/img/nike/nike.jpg" alt="">
-                    <div class="show-more">Xem Thêm</div>
-                </a>
-                <a href="/html/vans.html"><img class="banner-img" src="/img/vans/vans2.jpg" alt="">
-                    <div class="show-more">Xem Thêm</div>
-                </a>
-                <a href="/html/converse.html"> <img class="banner-img" src="/img/converse/conversee.jpg" alt="">
-                    <div class="show-more">Xem Thêm</div>
-                </a>
-                <a href="/html/fila.html"><img class="banner-img" src="/img/fila/fila.jpg" alt="">
-                    <div class="show-more">Xem Thêm</div>
-                </a>
-                <a href="/html/mlb.html"><img class="banner-img" src="/img/mlb/mlb.png" alt="">
-                    <div class="show-more">Xem Thêm</div>
-                </a>
-            </div>
+            <ul class="banner single-item-rtl">
+                <li>
+                    <a href="#nike"><img class="banner-img" src="/img/nike/nike.jpg" alt="">
+                        <div class="show-more">Xem Thêm</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#vans"><img class="banner-img" src="/img/vans/vans2.jpg" alt="">
+                        <div class="show-more">Xem Thêm</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#converse"> <img class="banner-img" src="/img/converse/conversee.jpg" alt="">
+                        <div class="show-more">Xem Thêm</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#fila"><img class="banner-img" src="/img/fila/fila.jpg" alt="">
+                        <div class="show-more">Xem Thêm</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#mlb"><img class="banner-img" src="/img/mlb/mlb.png" alt="">
+                        <div class="show-more">Xem Thêm</div>
+                    </a>
+                </li>
+            </ul>
 
             <!-- best - selling product -->
             <div class="best-selling" id="best-selling">
@@ -243,28 +253,38 @@
                 <h3 class="heading">
                     THƯƠNG HIỆU NỔI TIẾNG
                 </h3>
-                <div class="brand-brand">
-                    <a href="/html/fila.html" class="box-brand" style="text-decoration: none;">
-                        <img src="/img/logo-brand/fila-logo.jpeg" alt="Fila">
-                        <p>Fila</p>
-                    </a>
-                    <a href="/html/converse.html" class="box-brand" style="text-decoration: none;">
-                        <img src="/img/logo-brand/converse-logo.jpg" alt="Fila">
-                        <p>Converse</p>
-                    </a>
-                    <a href="/html/vans.html" class="box-brand" style="text-decoration: none;">
-                        <img src="/img/logo-brand/vans-logo.jpg" alt="Fila">
-                        <p>Vans</p>
-                    </a>
-                    <a href="/html/mlb.html" class="box-brand" style="text-decoration: none;">
-                        <img src="/img/logo-brand/mlb-logo.png" alt="Fila">
-                        <p>MLB</p>
-                    </a>
-                    <a href="/html/nike.html" class="box-brand" style="text-decoration: none;">
-                        <img src="/img/logo-brand/nike-logo.jpg" alt="Fila">
-                        <p>Nike</p>
-                    </a>
-                </div>
+                <ul class="brand-brand">
+                    <li>
+                        <a href="#fila" class="box-brand" style="text-decoration: none;">
+                            <img src="/img/logo-brand/fila-logo.jpeg" alt="Fila">
+                            <p>Fila</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#converse" class="box-brand" style="text-decoration: none;">
+                            <img src="/img/logo-brand/converse-logo.jpg" alt="Fila">
+                            <p>Converse</p>
+                        </a>
+                    </li>    
+                    <li>
+                        <a href="#vans" class="box-brand" style="text-decoration: none;">
+                            <img src="/img/logo-brand/vans-logo.jpg" alt="Fila">
+                            <p>Vans</p>
+                        </a>
+                    </li>    
+                    <li>
+                        <a href="#mlb" class="box-brand" style="text-decoration: none;">
+                            <img src="/img/logo-brand/mlb-logo.png" alt="Fila">
+                            <p>MLB</p>
+                        </a>
+                    </li>    
+                    <li>
+                        <a href="#nike" class="box-brand" style="text-decoration: none;">
+                            <img src="/img/logo-brand/nike-logo.jpg" alt="Fila">
+                            <p>Nike</p>
+                        </a>
+                    </li>    
+                </ul>
             </div>
 
             <!-- San pham -->
@@ -1041,7 +1061,7 @@
                         <div class="hidden" id="hidden">
                             <p>Ẩn bộ lọc</p>
                         </div>
-                        <i id="x" class="fa-solid fa-x" onclick="hiddenFilter()" value="0"></i>
+                        <i id="x" class="fa-solid fa-x x"value="0"></i>
                     </div>
 
                     <div class="result-filter" id="result-filter">
@@ -1078,10 +1098,12 @@
                                 <h3 class="heading-filter">
                                     PHONG CÁCH GIÀY
                                 </h3>
-                                <span id="minusOne" class="fa-solid fa-minus"></span>
-                                <span id="plusOne" class="fa-solid fa-plus"></span>
+                                <span class="more" value="0">
+                                    <span class="fa-solid fa-minus"></span>
+                                    <span class="fa-solid fa-plus"></span>
+                                </span>
                             </div>
-                            <div id="styleOne" class="style">
+                            <div class="style">
                                 <div class="box-style">
                                     <img src="/img/img/coCao.jpg">
                                     <p>Cổ Cao</p>
@@ -1102,10 +1124,12 @@
                                 <h3 class="heading-filter">
                                     SIZE GIÀY
                                 </h3>
-                                <span id="minusTwo" class="fa-solid fa-minus"></span>
-                                <span id="plusTwo" class="fa-solid fa-plus"></span>
+                                <span class="more" value="0">
+                                    <span class="fa-solid fa-minus"></span>
+                                    <span class="fa-solid fa-plus"></span>
+                                </span>
                             </div>
-                            <div id="styleTwo" class="style">
+                            <div class="style">
                                 <div class="box-size">34</div>
                                 <div class="box-size">35</div>
                                 <div class="box-size">36</div>
@@ -1124,10 +1148,12 @@
                                 <h3 class="heading-filter">
                                     MÀU SẮC
                                 </h3>
-                                <span id="minusThree" class="fa-solid fa-minus"></span>
-                                <span id="plusThree" class="fa-solid fa-plus"></span>
+                                <span class="more" value="0">
+                                    <span class="fa-solid fa-minus"></span>
+                                    <span class="fa-solid fa-plus"></span>
+                                </span>
                             </div>
-                            <div id="styleThree" class="style">
+                            <div class="style">
                                 <div class="box-color">
                                     <i class="fa-solid fa-circle" style="color: #000000;"></i>
                                 </div>
@@ -1694,7 +1720,7 @@
                         <div class="hidden" id="hidden">
                             <p>Ẩn bộ lọc</p>
                         </div>
-                        <i id="x" class="fa-solid fa-x" onclick="hiddenFilter()" value="0"></i>
+                        <i id="x" class="fa-solid fa-x x"value="0"></i>
                     </div>
 
                     <div class="result-filter" id="result-filter">
@@ -1731,10 +1757,12 @@
                                 <h3 class="heading-filter">
                                     PHONG CÁCH GIÀY
                                 </h3>
-                                <span id="minusOne" class="fa-solid fa-minus"></span>
-                                <span id="plusOne" class="fa-solid fa-plus"></span>
+                                <span class="more" value="0">
+                                    <span class="fa-solid fa-minus"></span>
+                                    <span class="fa-solid fa-plus"></span>
+                                </span>
                             </div>
-                            <div id="styleOne" class="style">
+                            <div class="style">
                                 <div class="box-style">
                                     <img src="/img/img/coCao.jpg">
                                     <p>Cổ Cao</p>
@@ -1755,10 +1783,12 @@
                                 <h3 class="heading-filter">
                                     SIZE GIÀY
                                 </h3>
-                                <span id="minusTwo" class="fa-solid fa-minus"></span>
-                                <span id="plusTwo" class="fa-solid fa-plus"></span>
+                                <span class="more" value="0">
+                                    <span class="fa-solid fa-minus"></span>
+                                    <span class="fa-solid fa-plus"></span>
+                                </span>
                             </div>
-                            <div id="styleTwo" class="style">
+                            <div class="style">
                                 <div class="box-size">34</div>
                                 <div class="box-size">35</div>
                                 <div class="box-size">36</div>
@@ -1777,10 +1807,12 @@
                                 <h3 class="heading-filter">
                                     MÀU SẮC
                                 </h3>
-                                <span id="minusThree" class="fa-solid fa-minus"></span>
-                                <span id="plusThree" class="fa-solid fa-plus"></span>
+                                <span class="more" value="0">
+                                    <span class="fa-solid fa-minus"></span>
+                                    <span class="fa-solid fa-plus"></span>
+                                </span>
                             </div>
-                            <div id="styleThree" class="style">
+                            <div class="style">
                                 <div class="box-color">
                                     <i class="fa-solid fa-circle" style="color: #000000;"></i>
                                 </div>
@@ -2347,7 +2379,7 @@
                         <div class="hidden" id="hidden">
                             <p>Ẩn bộ lọc</p>
                         </div>
-                        <i id="x" class="fa-solid fa-x" onclick="hiddenFilter()" value="0"></i>
+                        <i id="x" class="fa-solid fa-x x"value="0"></i>
                     </div>
 
                     <div class="result-filter" id="result-filter">
@@ -2384,10 +2416,12 @@
                                 <h3 class="heading-filter">
                                     PHONG CÁCH GIÀY
                                 </h3>
-                                <span id="minusOne" class="fa-solid fa-minus"></span>
-                                <span id="plusOne" class="fa-solid fa-plus"></span>
+                                <span class="more" value="0">
+                                    <span class="fa-solid fa-minus"></span>
+                                    <span class="fa-solid fa-plus"></span>
+                                </span>
                             </div>
-                            <div id="styleOne" class="style">
+                            <div class="style">
                                 <div class="box-style">
                                     <img src="/img/img/coCao.jpg">
                                     <p>Cổ Cao</p>
@@ -2408,10 +2442,12 @@
                                 <h3 class="heading-filter">
                                     SIZE GIÀY
                                 </h3>
-                                <span id="minusTwo" class="fa-solid fa-minus"></span>
-                                <span id="plusTwo" class="fa-solid fa-plus"></span>
+                                <span class="more" value="0">
+                                    <span class="fa-solid fa-minus"></span>
+                                    <span class="fa-solid fa-plus"></span>
+                                </span>
                             </div>
-                            <div id="styleTwo" class="style">
+                            <div class="style">
                                 <div class="box-size">34</div>
                                 <div class="box-size">35</div>
                                 <div class="box-size">36</div>
@@ -2430,10 +2466,12 @@
                                 <h3 class="heading-filter">
                                     MÀU SẮC
                                 </h3>
-                                <span id="minusThree" class="fa-solid fa-minus"></span>
-                                <span id="plusThree" class="fa-solid fa-plus"></span>
+                                <span class="more" value="0">
+                                    <span class="fa-solid fa-minus"></span>
+                                    <span class="fa-solid fa-plus"></span>
+                                </span>
                             </div>
-                            <div id="styleThree" class="style">
+                            <div class="style">
                                 <div class="box-color">
                                     <i class="fa-solid fa-circle" style="color: #000000;"></i>
                                 </div>
@@ -3000,7 +3038,7 @@
                         <div class="hidden" id="hidden">
                             <p>Ẩn bộ lọc</p>
                         </div>
-                        <i id="x" class="fa-solid fa-x" onclick="hiddenFilter()" value="0"></i>
+                        <i id="x" class="fa-solid fa-x x"value="0"></i>
                     </div>
 
                     <div class="result-filter" id="result-filter">
@@ -3037,10 +3075,12 @@
                                 <h3 class="heading-filter">
                                     PHONG CÁCH GIÀY
                                 </h3>
-                                <span id="minusOne" class="fa-solid fa-minus"></span>
-                                <span id="plusOne" class="fa-solid fa-plus"></span>
+                                <span class="more" value="0">
+                                    <span class="fa-solid fa-minus"></span>
+                                    <span class="fa-solid fa-plus"></span>
+                                </span>
                             </div>
-                            <div id="styleOne" class="style">
+                            <div class="style">
                                 <div class="box-style">
                                     <img src="/img/img/coCao.jpg">
                                     <p>Cổ Cao</p>
@@ -3061,10 +3101,12 @@
                                 <h3 class="heading-filter">
                                     SIZE GIÀY
                                 </h3>
-                                <span id="minusTwo" class="fa-solid fa-minus"></span>
-                                <span id="plusTwo" class="fa-solid fa-plus"></span>
+                                <span class="more" value="0">
+                                    <span class="fa-solid fa-minus"></span>
+                                    <span class="fa-solid fa-plus"></span>
+                                </span>
                             </div>
-                            <div id="styleTwo" class="style">
+                            <div class="style">
                                 <div class="box-size">34</div>
                                 <div class="box-size">35</div>
                                 <div class="box-size">36</div>
@@ -3083,10 +3125,12 @@
                                 <h3 class="heading-filter">
                                     MÀU SẮC
                                 </h3>
-                                <span id="minusThree" class="fa-solid fa-minus"></span>
-                                <span id="plusThree" class="fa-solid fa-plus"></span>
+                                <span class="more" value="0">
+                                    <span class="fa-solid fa-minus"></span>
+                                    <span class="fa-solid fa-plus"></span>
+                                </span>
                             </div>
-                            <div id="styleThree" class="style">
+                            <div class="style">
                                 <div class="box-color">
                                     <i class="fa-solid fa-circle" style="color: #000000;"></i>
                                 </div>
@@ -3653,7 +3697,7 @@
                         <div class="hidden" id="hidden">
                             <p>Ẩn bộ lọc</p>
                         </div>
-                        <i id="x" class="fa-solid fa-x" onclick="hiddenFilter()" value="0"></i>
+                        <i id="x" class="fa-solid fa-x x"value="0"></i>
                     </div>
 
                     <div class="result-filter" id="result-filter">
@@ -3690,10 +3734,12 @@
                                 <h3 class="heading-filter">
                                     PHONG CÁCH GIÀY
                                 </h3>
-                                <span id="minusOne" class="fa-solid fa-minus"></span>
-                                <span id="plusOne" class="fa-solid fa-plus"></span>
+                                <span class="more" value="0">
+                                    <span class="fa-solid fa-minus"></span>
+                                    <span class="fa-solid fa-plus"></span>
+                                </span>
                             </div>
-                            <div id="styleOne" class="style">
+                            <div class="style">
                                 <div class="box-style">
                                     <img src="/img/img/coCao.jpg">
                                     <p>Cổ Cao</p>
@@ -3714,10 +3760,12 @@
                                 <h3 class="heading-filter">
                                     SIZE GIÀY
                                 </h3>
-                                <span id="minusTwo" class="fa-solid fa-minus"></span>
-                                <span id="plusTwo" class="fa-solid fa-plus"></span>
+                                <span class="more" value="0">
+                                    <span class="fa-solid fa-minus"></span>
+                                    <span class="fa-solid fa-plus"></span>
+                                </span>
                             </div>
-                            <div id="styleTwo" class="style">
+                            <div class="style">
                                 <div class="box-size">34</div>
                                 <div class="box-size">35</div>
                                 <div class="box-size">36</div>
@@ -3736,10 +3784,12 @@
                                 <h3 class="heading-filter">
                                     MÀU SẮC
                                 </h3>
-                                <span id="minusThree" class="fa-solid fa-minus"></span>
-                                <span id="plusThree" class="fa-solid fa-plus"></span>
+                                <span class="more" value="0">
+                                    <span class="fa-solid fa-minus"></span>
+                                    <span class="fa-solid fa-plus"></span>
+                                </span>
                             </div>
-                            <div id="styleThree" class="style">
+                            <div class="style">
                                 <div class="box-color">
                                     <i class="fa-solid fa-circle" style="color: #000000;"></i>
                                 </div>
@@ -4306,7 +4356,7 @@
                         <div class="hidden" id="hidden">
                             <p>Ẩn bộ lọc</p>
                         </div>
-                        <i id="x" class="fa-solid fa-x" onclick="hiddenFilter()" value="0"></i>
+                        <i id="x" class="fa-solid fa-x x"value="0"></i>
                     </div>
 
                     <div class="result-filter" id="result-filter">
@@ -4343,10 +4393,12 @@
                                 <h3 class="heading-filter">
                                     PHONG CÁCH GIÀY
                                 </h3>
-                                <span id="minusOne" class="fa-solid fa-minus"></span>
-                                <span id="plusOne" class="fa-solid fa-plus"></span>
+                                <span class="more" value="0">
+                                    <span class="fa-solid fa-minus"></span>
+                                    <span class="fa-solid fa-plus"></span>
+                                </span>
                             </div>
-                            <div id="styleOne" class="style">
+                            <div class="style">
                                 <div class="box-style">
                                     <img src="/img/img/coCao.jpg">
                                     <p>Cổ Cao</p>
@@ -4367,10 +4419,12 @@
                                 <h3 class="heading-filter">
                                     SIZE GIÀY
                                 </h3>
-                                <span id="minusTwo" class="fa-solid fa-minus"></span>
-                                <span id="plusTwo" class="fa-solid fa-plus"></span>
+                                <span class="more" value="0">
+                                    <span class="fa-solid fa-minus"></span>
+                                    <span class="fa-solid fa-plus"></span>
+                                </span>
                             </div>
-                            <div id="styleTwo" class="style">
+                            <div class="style">
                                 <div class="box-size">34</div>
                                 <div class="box-size">35</div>
                                 <div class="box-size">36</div>
@@ -4389,10 +4443,12 @@
                                 <h3 class="heading-filter">
                                     MÀU SẮC
                                 </h3>
-                                <span id="minusThree" class="fa-solid fa-minus"></span>
-                                <span id="plusThree" class="fa-solid fa-plus"></span>
+                                <span class="more" value="0">
+                                    <span class="fa-solid fa-minus"></span>
+                                    <span class="fa-solid fa-plus"></span>
+                                </span>
                             </div>
-                            <div id="styleThree" class="style">
+                            <div class="style">
                                 <div class="box-color">
                                     <i class="fa-solid fa-circle" style="color: #000000;"></i>
                                 </div>
@@ -4959,7 +5015,7 @@
                         <div class="hidden" id="hidden">
                             <p>Ẩn bộ lọc</p>
                         </div>
-                        <i id="x" class="fa-solid fa-x" onclick="hiddenFilter()" value="0"></i>
+                        <i id="x" class="fa-solid fa-x x"value="0"></i>
                     </div>
 
                     <div class="result-filter" id="result-filter">
@@ -4996,10 +5052,12 @@
                                 <h3 class="heading-filter">
                                     PHONG CÁCH GIÀY
                                 </h3>
-                                <span id="minusOne" class="fa-solid fa-minus"></span>
-                                <span id="plusOne" class="fa-solid fa-plus"></span>
+                                <span class="more" value="0">
+                                    <span class="fa-solid fa-minus"></span>
+                                    <span class="fa-solid fa-plus"></span>
+                                </span>
                             </div>
-                            <div id="styleOne" class="style">
+                            <div class="style">
                                 <div class="box-style">
                                     <img src="/img/img/coCao.jpg">
                                     <p>Cổ Cao</p>
@@ -5020,10 +5078,12 @@
                                 <h3 class="heading-filter">
                                     SIZE GIÀY
                                 </h3>
-                                <span id="minusTwo" class="fa-solid fa-minus"></span>
-                                <span id="plusTwo" class="fa-solid fa-plus"></span>
+                                <span class="more" value="0">
+                                    <span class="fa-solid fa-minus"></span>
+                                    <span class="fa-solid fa-plus"></span>
+                                </span>
                             </div>
-                            <div id="styleTwo" class="style">
+                            <div class="style">
                                 <div class="box-size">34</div>
                                 <div class="box-size">35</div>
                                 <div class="box-size">36</div>
@@ -5042,10 +5102,12 @@
                                 <h3 class="heading-filter">
                                     MÀU SẮC
                                 </h3>
-                                <span id="minusThree" class="fa-solid fa-minus"></span>
-                                <span id="plusThree" class="fa-solid fa-plus"></span>
+                                <span class="more" value="0">
+                                    <span class="fa-solid fa-minus"></span>
+                                    <span class="fa-solid fa-plus"></span>
+                                </span>
                             </div>
-                            <div id="styleThree" class="style">
+                            <div class="style">
                                 <div class="box-color">
                                     <i class="fa-solid fa-circle" style="color: #000000;"></i>
                                 </div>
