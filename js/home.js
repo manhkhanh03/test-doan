@@ -80,11 +80,3 @@ function changePage(i) {
     loadItem();
 }
 
-
-// let like = document.getElementById('btn-like')
-// for (i = 0; i < like.length; i++) {
-//     like[i].addEventListener('click', function (event) {
-//         event.currentTarget.classList.toggle('pink');
-//     })
-// }
-

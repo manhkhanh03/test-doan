@@ -273,36 +273,25 @@ function sortFilter() {
 $(document).ready(function () {
     var more = $('.more').toArray()
     var style = $('.style').toArray()
-    const minus = $('.more .fa-minus')
-    const plus = $('.more .fa-plus')
 
     for (let i = 0; i < more.length; i++) {
-        minus.addClass('block')
+        // minus.addClass('block')
         more[i].addEventListener('click', function () {
             if (more[i].value == '0') {
                 console.log('manh')
                 more[i].value = '1'
                 style[i].style.display = 'flex'
-                minus[i].classList.add('block')
-                plus[i].classList.remove('block')
+                more[i].classList.remove('fa-plus')
+                more[i].classList.add('fa-minus')
             }
             else {
                 console.log('khanh')
                 more[i].value = '0'
                 style[i].style.display = 'none'
-                plus[i].classList.add('block')
-                minus[i].classList.remove('block')
+                more[i].classList.remove('fa-minus')
+                more[i].classList.add('fa-plus')
             }
         })
     }
 })
-
-//heart
-// let likeButton = document.getElementsByClassName('btn-like')
-
-// for (i = 0; i < likeButton.length; i++) {
-//     likeButton[i].addEventListener('click', function (event) {
-//         event.currentTarget.classList.toggle('pink');
-//     })
-// }
 

@@ -793,18 +793,6 @@
     cursor: pointer;
 }
 
-.fa-minus {
-    display: none;
-}
-
-.fa-plus {
-    display: none;
-}
-
-.block {
-    display: block;
-}
-
 .style {
     display: flex;
     flex-wrap: wrap;
