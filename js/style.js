@@ -124,6 +124,8 @@ let windowWidth = document.getElementById('website').clientWidth
 focusInput(windowWidth)
 grow(windowWidth)
 onclick(windowWidth)
+reADD(windowWidth)
+sort(windowWidth)
 
 $(document).ready(function () {
     $(window).resize(function () {
@@ -131,6 +133,8 @@ $(document).ready(function () {
         focusInput(windowWidth)
         grow(windowWidth)
         onclick(windowWidth)
+        reADD(windowWidth)
+        sort(windowWidth)
     })
 })
 
@@ -258,40 +262,168 @@ $(document).ready(function () {
 })
 
 // Sắp xếp bộ lọc
-function sortFilter() {
-    if (document.getElementById('down').value == '0') {
-        document.getElementById('offer-sort').style.display = 'none';
-        document.getElementById('down').value = '1';
+// function sortFilter() {
+//     if (document.getElementById('down').value == '0') {
+//         document.getElementById('offer-sort').style.display = 'none';
+//         document.getElementById('down').value = '1';
+//     }
+//     else {
+//         document.getElementById('offer-sort').style.display = 'block';
+//         document.getElementById('down').value = '0';
+//     }
+// }
+
+$(document).ready(function () {
+    var offer = $('.offer-sort').toArray()
+    var down = $('.down').toArray()
+    for (i = 0; i < down.length; i++) {
+        console.log(offer[i])
+        down[i].addEventListener('click', function () {
+            offer[i].style.display = 'block'
+        })
+
     }
-    else {
-        document.getElementById('offer-sort').style.display = 'block';
-        document.getElementById('down').value = '0';
+})
+
+// Ẩn phong cách
+function reADD(windowWidth) {
+    var more = document.getElementsByClassName('more')
+
+    for (let i = 0; i < more.length; i++) {
+        if (windowWidth > 1024) {
+            more[i].classList.add('fa-minus')
+            more[i].classList.remove('fa-chevron-up')
+            more[i].classList.remove('fa-chevron-down')
+        } else {
+            more[i].classList.add('fa-chevron-up')
+            more[i].classList.remove('fa-plus')
+            more[i].classList.remove('fa-minus')
+        }
     }
 }
 
-// Ẩn phong cách
-$(document).ready(function () {
-    var more = $('.more').toArray()
-    var style = $('.style').toArray()
+function sort(windowWidth) {
+    var more = document.getElementsByClassName('more')
+    var style = document.getElementsByClassName('style')
+    let info = document.getElementsByClassName('info')
+    console.log(info)
 
     for (let i = 0; i < more.length; i++) {
-        // minus.addClass('block')
         more[i].addEventListener('click', function () {
             if (more[i].value == '0') {
-                console.log('manh')
                 more[i].value = '1'
                 style[i].style.display = 'flex'
-                more[i].classList.remove('fa-plus')
-                more[i].classList.add('fa-minus')
+                if (windowWidth > 1024) {
+                    more[i].classList.remove('fa-plus')
+                    more[i].classList.add('fa-minus')
+                    more[i].classList.remove('fa-chevron-up')
+                    more[i].classList.remove('fa-chevron-down')
+                } else {
+                    more[i].classList.remove('fa-chevron-down')
+                    more[i].classList.remove('fa-plus')
+                    more[i].classList.remove('fa-minus')
+                    more[i].classList.add('fa-chevron-up')
+                    info[i].style.display = 'none'
+                }
             }
             else {
-                console.log('khanh')
                 more[i].value = '0'
                 style[i].style.display = 'none'
-                more[i].classList.remove('fa-minus')
-                more[i].classList.add('fa-plus')
+                if (windowWidth > 1024) {
+                    more[i].classList.remove('fa-minus')
+                    more[i].classList.add('fa-plus')
+                    more[i].classList.remove('fa-chevron-up')
+                    more[i].classList.remove('fa-chevron-down')
+                } else {
+                    more[i].classList.remove('fa-chevron-up')
+                    more[i].classList.add('fa-chevron-down')
+                    more[i].classList.remove('fa-plus')
+                    more[i].classList.remove('fa-minus')
+                    info[i].style.display = 'block'
+                }
             }
         })
     }
+}
+
+
+// Phan trang
+// limit: gioi han
+let limit = 0;
+let thisPage = 1;
+let list = document.querySelectorAll('.product-product .box-product');
+function checkLimit(widthPage) {
+    console.log(widthPage)
+    if (widthPage >= 400 && widthPage < 1024) {
+        limit = 12;
+    }
+    else {
+        limit = 10;
+    }
+    loadItem()
+}
+let widthPage = document.getElementById('website').clientWidth
+checkLimit(widthPage)
+$(document).ready(function () {
+    $(window).resize(function () {
+        widthPage = document.getElementById('website').clientWidth
+        checkLimit(widthPage)
+    })
 })
+
+function loadItem() {
+    let beginGet = limit * (thisPage - 1);
+    let endGet = limit * thisPage - 1;
+    list.forEach((item, key) => {
+        if (key >= beginGet && key <= endGet)
+            item.style.display = 'block';
+        else
+            item.style.display = 'none';
+    })
+    listPage();
+}
+loadItem();
+
+function listPage() {
+    let count = Math.ceil(list.length / limit);
+    document.querySelector('.listPage').innerHTML = '';
+
+    // prev
+    if (thisPage >= 1) {
+        let prev = document.createElement('li');
+        prev.classList.add('fa-solid', 'fa-chevron-left');
+        if (thisPage > 1) {
+            prev.setAttribute('onclick', 'changePage(' + (thisPage - 1) + ')');
+        } else {
+            prev.classList.add('P-N')
+        }
+        document.querySelector('.listPage').appendChild(prev);
+    }
+
+    for (i = 1; i <= count; i++) {
+        let newPage = document.createElement('li');
+        newPage.innerText = i;
+        if (i == thisPage)
+            newPage.classList.add('active');
+        newPage.setAttribute('onclick', 'changePage(' + i + ')');
+        document.querySelector('.listPage').appendChild(newPage);
+    }
+
+    // next
+    if (thisPage <= count) {
+        let next = document.createElement('li');
+        next.classList.add('fa-solid', 'fa-chevron-right');
+        if (thisPage < count) {
+            next.setAttribute('onclick', 'changePage(' + (thisPage + 1) + ')');
+        } else {
+            next.classList.add('P-N')
+        }
+        document.querySelector('.listPage').appendChild(next);
+    }
+}
+
+function changePage(i) {
+    thisPage = i;
+    loadItem();
+}
 
