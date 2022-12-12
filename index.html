@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
         integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -23,7 +26,7 @@
     <div class="website" id="website">
         <header class="menu">
             <div id="toggle">
-                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-align-justify"></i>
             </div>
             <div class="navbar">
                 <a class="nav-img focus-input" href="#home-page"><img src="/img/logo-brand/logomhl.png" alt="MHL"></a>
@@ -75,11 +78,54 @@
 
             <ul class="s-s-u">
                 <li class="item active-input">
-                    <input type="text" id="input" class="search" placeholder="Tìm kiếm sản phẩm">
+                    <input type="text" class="search" placeholder="Tìm kiếm sản phẩm">
                     <i class="fa-solid fa-magnifying-glass search-icon icon"></i>
                     <i class="fa-regular fa-image search-active icon"></i>
                 </li>
-                <li class="item focus-input"><a href=""><i class="fa-solid fa-cart-shopping icon"></i></a></li>
+                <li class="item focus-input">
+                    <a href="">
+                        <i class="fa-solid fa-cart-shopping icon sp-hv">
+                            <div class="shopping">
+                                <div class="shopping-heading">
+                                    Sản Phẩm Mới Thêm
+                                </div>
+                                <div class="shopping-information">
+                                    <div class="box-info">
+                                        <img src="/img/converse/Converse-1970s.jpg" class="img">
+                                        <h5 class="header">
+                                            Giày Converse 1970s
+                                        </h5>
+                                        <div class="price">580.000đ</div>
+                                    </div>
+                                    <div class="box-info">
+                                        <img src="/img/converse/Converse-1970s.jpg" class="img">
+                                        <h5 class="header">
+                                            Giày Converse 1970s
+                                        </h5>
+                                        <div class="price">580.000đ</div>
+                                    </div>
+                                    <div class="box-info">
+                                        <img src="/img/converse/Converse-1970s.jpg" class="img">
+                                        <h5 class="header">
+                                            Giày Converse 1970s
+                                        </h5>
+                                        <div class="price">580.000đ</div>
+                                    </div>
+                                    <div class="box-info">
+                                        <img src="/img/converse/Converse-1970s.jpg" class="img">
+                                        <h5 class="header">
+                                            Giày Converse 1970s
+                                        </h5>
+                                        <div class="price">580.000đ</div>
+                                    </div>
+                                </div>
+                                <div class="more-shopping">
+                                    Xem giỏ hàng
+                                </div>
+                            </div>
+                        </i>
+                    </a>
+                </li>
                 <li class="item focus-input"><a href="login.html"><i class="fa-solid fa-user icon"></i></a></li>
             </ul>
         </header>
@@ -1061,7 +1107,7 @@
                         <div class="hidden" id="hidden">
                             <p>Ẩn bộ lọc</p>
                         </div>
-                        <i id="x" class="fa-solid fa-x x" value="0"></i>
+                        <i class="fa-solid fa-list x"></i>
                     </div>
 
                     <div class="result-filter" id="result-filter">
@@ -1076,7 +1122,7 @@
                             <div class="offer" id="offer">
                                 Đề xuất
                             </div>
-                            <ul class="offer-sort" id="offer-sort">
+                            <ul class="offer-sort">
                                 <li>Đề xuất</li>
                                 <li>Giá từ thấp lên cao</li>
                                 <li>Giá từ cao xuống thấp</li>
@@ -1084,7 +1130,7 @@
                                 <li>Xem nhiều nhất</li>
                             </ul>
                         </div>
-                        <i id="down" class="fa-solid fa-caret-down down" value="0"></i>
+                        <i class="fa-solid fa-caret-down down" value="0"></i>
                     </div>
                 </div>
 
@@ -1115,7 +1161,7 @@
                                 </ul>
                             </div>
                         </div>
-                        
+
                         <div class="style-shoes">
                             <div class="heading-heading">
                                 <h3 class="heading-filter">
@@ -1737,7 +1783,7 @@
                         <div class="hidden" id="hidden">
                             <p>Ẩn bộ lọc</p>
                         </div>
-                        <i id="x" class="fa-solid fa-x x" value="0"></i>
+                        <i class="fa-solid fa-list x"></i>
                     </div>
 
                     <div class="result-filter" id="result-filter">
@@ -1752,7 +1798,7 @@
                             <div class="offer" id="offer">
                                 Đề xuất
                             </div>
-                            <ul class="offer-sort" id="offer-sort">
+                            <ul class="offer-sort">
                                 <li>Đề xuất</li>
                                 <li>Giá từ thấp lên cao</li>
                                 <li>Giá từ cao xuống thấp</li>
@@ -1760,7 +1806,7 @@
                                 <li>Xem nhiều nhất</li>
                             </ul>
                         </div>
-                        <i id="down" class="fa-solid fa-caret-down down" value="0"></i>
+                        <i class="fa-solid fa-caret-down down" value="0"></i>
                     </div>
                 </div>
 
@@ -2412,7 +2458,7 @@
                         <div class="hidden" id="hidden">
                             <p>Ẩn bộ lọc</p>
                         </div>
-                        <i id="x" class="fa-solid fa-x x" value="0"></i>
+                        <i class="fa-solid fa-list x"></i>
                     </div>
 
                     <div class="result-filter" id="result-filter">
@@ -2427,7 +2473,7 @@
                             <div class="offer" id="offer">
                                 Đề xuất
                             </div>
-                            <ul class="offer-sort" id="offer-sort">
+                            <ul class="offer-sort">
                                 <li>Đề xuất</li>
                                 <li>Giá từ thấp lên cao</li>
                                 <li>Giá từ cao xuống thấp</li>
@@ -2435,7 +2481,7 @@
                                 <li>Xem nhiều nhất</li>
                             </ul>
                         </div>
-                        <i id="down" class="fa-solid fa-caret-down down" value="0"></i>
+                        <i class="fa-solid fa-caret-down down" value="0"></i>
                     </div>
                 </div>
 
@@ -3087,7 +3133,7 @@
                         <div class="hidden" id="hidden">
                             <p>Ẩn bộ lọc</p>
                         </div>
-                        <i id="x" class="fa-solid fa-x x" value="0"></i>
+                        <i class="fa-solid fa-list x"></i>
                     </div>
 
                     <div class="result-filter" id="result-filter">
@@ -3102,7 +3148,7 @@
                             <div class="offer" id="offer">
                                 Đề xuất
                             </div>
-                            <ul class="offer-sort" id="offer-sort">
+                            <ul class="offer-sort">
                                 <li>Đề xuất</li>
                                 <li>Giá từ thấp lên cao</li>
                                 <li>Giá từ cao xuống thấp</li>
@@ -3110,7 +3156,7 @@
                                 <li>Xem nhiều nhất</li>
                             </ul>
                         </div>
-                        <i id="down" class="fa-solid fa-caret-down down" value="0"></i>
+                        <i class="fa-solid fa-caret-down down" value="0"></i>
                     </div>
                 </div>
 
@@ -3762,7 +3808,7 @@
                         <div class="hidden" id="hidden">
                             <p>Ẩn bộ lọc</p>
                         </div>
-                        <i id="x" class="fa-solid fa-x x" value="0"></i>
+                        <i class="fa-solid fa-list x"></i>
                     </div>
 
                     <div class="result-filter" id="result-filter">
@@ -3777,7 +3823,7 @@
                             <div class="offer" id="offer">
                                 Đề xuất
                             </div>
-                            <ul class="offer-sort" id="offer-sort">
+                            <ul class="offer-sort">
                                 <li>Đề xuất</li>
                                 <li>Giá từ thấp lên cao</li>
                                 <li>Giá từ cao xuống thấp</li>
@@ -3785,7 +3831,7 @@
                                 <li>Xem nhiều nhất</li>
                             </ul>
                         </div>
-                        <i id="down" class="fa-solid fa-caret-down down" value="0"></i>
+                        <i class="fa-solid fa-caret-down down" value="0"></i>
                     </div>
                 </div>
 
@@ -4437,7 +4483,7 @@
                         <div class="hidden" id="hidden">
                             <p>Ẩn bộ lọc</p>
                         </div>
-                        <i id="x" class="fa-solid fa-x x" value="0"></i>
+                        <i class="fa-solid fa-list x"></i>
                     </div>
 
                     <div class="result-filter" id="result-filter">
@@ -4452,7 +4498,7 @@
                             <div class="offer" id="offer">
                                 Đề xuất
                             </div>
-                            <ul class="offer-sort" id="offer-sort">
+                            <ul class="offer-sort">
                                 <li>Đề xuất</li>
                                 <li>Giá từ thấp lên cao</li>
                                 <li>Giá từ cao xuống thấp</li>
@@ -4460,7 +4506,7 @@
                                 <li>Xem nhiều nhất</li>
                             </ul>
                         </div>
-                        <i id="down" class="fa-solid fa-caret-down down" value="0"></i>
+                        <i class="fa-solid fa-caret-down down" value="0"></i>
                     </div>
                 </div>
 
@@ -5112,7 +5158,7 @@
                         <div class="hidden" id="hidden">
                             <p>Ẩn bộ lọc</p>
                         </div>
-                        <i id="x" class="fa-solid fa-x x" value="0"></i>
+                        <i class="fa-solid fa-list x"></i>
                     </div>
 
                     <div class="result-filter" id="result-filter">
@@ -5127,7 +5173,7 @@
                             <div class="offer" id="offer">
                                 Đề xuất
                             </div>
-                            <ul class="offer-sort" id="offer-sort">
+                            <ul class="offer-sort">
                                 <li>Đề xuất</li>
                                 <li>Giá từ thấp lên cao</li>
                                 <li>Giá từ cao xuống thấp</li>
@@ -5135,7 +5181,7 @@
                                 <li>Xem nhiều nhất</li>
                             </ul>
                         </div>
-                        <i id="down" class="fa-solid fa-caret-down down" value="0"></i>
+                        <i class="fa-solid fa-caret-down down" value="0"></i>
                     </div>
                 </div>
 

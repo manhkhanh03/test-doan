@@ -1,82 +1,142 @@
 // link
-$(document).ready(function () {
-    function activeTab(ojb) {
-        $('.navbar-btn li').removeClass('active')
+// $(document).ready(function () {
+//     function activeTab(ojb) {
+//         $('.navbar-btn li').removeClass('active')
 
-        $(ojb).addClass('active')
+//         $(ojb).addClass('active')
 
-        let id = $(ojb).find('a').attr('href')
+//         let id = $(ojb).find('a').attr('href')
 
-        $('.body').hide();
+//         $('.body').hide();
 
-        $(id).show()
+//         $(id).show()
+//     }
+
+//     $('.navbar-btn li').click(function () {
+//         activeTab(this)
+//         return false
+//     })
+
+//     activeTab($('.navbar-btn .list-item:first-child'))
+// })
+
+// $(document).ready(function () {
+//     function activeTab(ojb) {
+//         $('.list-item-a li').removeClass('active')
+
+//         $(ojb).addClass('active')
+
+//         let id = $(ojb).find('a').attr('href')
+
+//         $('.body').hide();
+
+//         $(id).show()
+//     }
+
+//     $('.list-list li').click(function () {
+//         activeTab(this)
+//         return false
+//     })
+// })
+
+// $(document).ready(function () {
+//     function activeTab(ojb) {
+//         $('.banner li').removeClass('active')
+
+//         $(ojb).addClass('active')
+
+//         let id = $(ojb).find('a').attr('href')
+
+//         $('.body').hide();
+
+//         $(id).show()
+//     }
+
+//     $('.banner li').click(function () {
+//         activeTab(this)
+//         return false
+//     })
+// }
+// )
+// $(document).ready(function () {
+//     function activeTab(ojb) {
+//         $('.brand-brand li').removeClass('active')
+
+//         $(ojb).addClass('active')
+
+//         let id = $(ojb).find('a').attr('href')
+
+//         $('.body').hide();
+
+//         $(id).show()
+//     }
+
+//     $('.brand-brand li').click(function () {
+//         activeTab(this)
+//         return false
+//     })
+// })
+
+// Tang so luong san pham
+let plus = document.getElementsByClassName('plus')
+let minus = document.getElementsByClassName('minus')
+let node = document.getElementsByClassName('p')
+let sum = document.getElementsByClassName('sum-product')
+for (let j = 0; j < node.length; j++) {
+    if (sum[j].innerHTML == 0) {
+        minus[j].classList.add('P-N')
+        node[j].innerHTML = sum[j].innerHTML
+        plus[j].classList.add('P-N')
     }
+    else {
+        let count = [j]
+        let textStock
+        var stock = document.getElementsByClassName('stock')
+        plus[j].addEventListener('click', function () {
+            if (node[j].innerHTML < sum[j].innerHTML) {
+                if (node[j].innerHTML == 0)
+                    minus[j].classList.remove('P-N')
+                ++node[j].innerHTML
+                count[j] = node[j].innerHTML
+                console.log(node[j].innerHTML)
+            }
+            else if (count[j] == sum[j].innerHTML) {
+                plus[j].classList.add('P-N')
+                textStock = document.createElement('p')
+                textStock.innerText = 'Không được vượt quá sản phẩm trong kho'
+                stock[j].appendChild(textStock)
+                count[j]++
+            }
+        })
 
-    $('.navbar-btn li').click(function () {
-        activeTab(this)
-        return false
-    })
-
-    activeTab($('.navbar-btn .list-item:first-child'))
-})
-
-$(document).ready(function () {
-    function activeTab(ojb) {
-        $('.list-item-a li').removeClass('active')
-
-        $(ojb).addClass('active')
-
-        let id = $(ojb).find('a').attr('href')
-
-        $('.body').hide();
-
-        $(id).show()
+        minus[j].addEventListener('click', function () {
+            console.log(count[j])
+            console.log(sum[j].innerHTML)
+            if (count[j] > sum[j].innerHTML) {
+                plus[j].classList.remove('P-N')
+                stock[j].removeChild(textStock)
+                count[j]--
+            }
+            if (node[j].innerHTML > 0) {
+                --node[j].innerHTML
+                if (node[j].innerHTML == 0)
+                    minus[j].classList.add('P-N')
+            }
+        })
     }
-
-    $('.list-list li').click(function () {
-        activeTab(this)
-        return false
-    })
-})
-
-$(document).ready(function () {
-    function activeTab(ojb) {
-        $('.banner li').removeClass('active')
-
-        $(ojb).addClass('active')
-
-        let id = $(ojb).find('a').attr('href')
-
-        $('.body').hide();
-
-        $(id).show()
-    }
-
-    $('.banner li').click(function () {
-        activeTab(this)
-        return false
-    })
 }
-)
-$(document).ready(function () {
-    function activeTab(ojb) {
-        $('.brand-brand li').removeClass('active')
 
-        $(ojb).addClass('active')
-
-        let id = $(ojb).find('a').attr('href')
-
-        $('.body').hide();
-
-        $(id).show()
+// all in input
+var allInput = document.getElementsByClassName('input')
+document.getElementById('action').onclick = function () {
+    for (let i = 0; i < allInput.length; i++) {
+        if (this.checked) {
+            $('input[type=checkbox]').prop('checked', true)
+        } else {
+            $('input[type=checkbox]').prop('checked', false)
+        }
     }
-
-    $('.brand-brand li').click(function () {
-        activeTab(this)
-        return false
-    })
-})
-
+}
 
 
 // focus input
@@ -261,29 +321,19 @@ $(document).ready(function () {
     }
 })
 
-// Sắp xếp bộ lọc
-// function sortFilter() {
-//     if (document.getElementById('down').value == '0') {
-//         document.getElementById('offer-sort').style.display = 'none';
-//         document.getElementById('down').value = '1';
-//     }
-//     else {
-//         document.getElementById('offer-sort').style.display = 'block';
-//         document.getElementById('down').value = '0';
-//     }
-// }
-
-$(document).ready(function () {
-    var offer = $('.offer-sort').toArray()
-    var down = $('.down').toArray()
-    for (i = 0; i < down.length; i++) {
-        console.log(offer[i])
-        down[i].addEventListener('click', function () {
-            offer[i].style.display = 'block'
+var offer = document.getElementsByClassName('offer-sort')
+// var sortScroll = document.getElementsByClassName('sort-scroll')
+var down = document.getElementsByClassName('down')
+console.log(offer)
+for (let i = 0; i < down.length; i++) {
+    down[i].addEventListener('click', function () {
+        offer[i].style.display = 'block'
+        offer[i].addEventListener('mouseleave', function () {
+            offer[i].style.display = 'none'
         })
+    })
+}
 
-    }
-})
 
 // Ẩn phong cách
 function reADD(windowWidth) {
@@ -305,7 +355,7 @@ function reADD(windowWidth) {
 function sort(windowWidth) {
     var more = document.getElementsByClassName('more')
     var style = document.getElementsByClassName('style')
-    let info = document.getElementsByClassName('info')
+    var info = document.getElementsByClassName('info')
     console.log(info)
 
     for (let i = 0; i < more.length; i++) {
