@@ -126,19 +126,6 @@ for (let j = 0; j < node.length; j++) {
     }
 }
 
-// all in input
-var allInput = document.getElementsByClassName('input')
-document.getElementById('action').onclick = function () {
-    for (let i = 0; i < allInput.length; i++) {
-        if (this.checked) {
-            $('input[type=checkbox]').prop('checked', true)
-        } else {
-            $('input[type=checkbox]').prop('checked', false)
-        }
-    }
-}
-
-
 // focus input
 function focusInput(windowWidth) {
     if (windowWidth <= 520) {

@@ -179,7 +179,7 @@
 
                     <div class="amount">
                         <div class="amount-more">
-                            <i class="fa-solid fa-minus minus" ></i>
+                            <i class="fa-solid fa-minus minus"></i>
                             <p class="p">1</p>
                             <i class="fa-solid fa-plus plus"></i>
                         </div>
@@ -222,7 +222,7 @@
 
                     <div class="amount">
                         <div class="amount-more">
-                            <i class="fa-solid fa-minus minus" ></i>
+                            <i class="fa-solid fa-minus minus"></i>
                             <p class="p">1</p>
                             <i class="fa-solid fa-plus plus"></i>
                         </div>
@@ -265,7 +265,7 @@
 
                     <div class="amount">
                         <div class="amount-more">
-                            <i class="fa-solid fa-minus minus" ></i>
+                            <i class="fa-solid fa-minus minus"></i>
                             <p class="p">1</p>
                             <i class="fa-solid fa-plus plus"></i>
                         </div>
@@ -308,7 +308,7 @@
 
                     <div class="amount">
                         <div class="amount-more">
-                            <i class="fa-solid fa-minus minus" ></i>
+                            <i class="fa-solid fa-minus minus"></i>
                             <p class="p">1</p>
                             <i class="fa-solid fa-plus plus"></i>
                         </div>
@@ -351,7 +351,7 @@
 
                     <div class="amount">
                         <div class="amount-more">
-                            <i class="fa-solid fa-minus minus" ></i>
+                            <i class="fa-solid fa-minus minus"></i>
                             <p class="p">1</p>
                             <i class="fa-solid fa-plus plus"></i>
                         </div>
@@ -394,7 +394,7 @@
 
                     <div class="amount">
                         <div class="amount-more">
-                            <i class="fa-solid fa-minus minus" ></i>
+                            <i class="fa-solid fa-minus minus"></i>
                             <p class="p">1</p>
                             <i class="fa-solid fa-plus plus"></i>
                         </div>
@@ -437,7 +437,7 @@
 
                     <div class="amount">
                         <div class="amount-more">
-                            <i class="fa-solid fa-minus minus" ></i>
+                            <i class="fa-solid fa-minus minus"></i>
                             <p class="p">1</p>
                             <i class="fa-solid fa-plus plus"></i>
                         </div>
@@ -480,7 +480,7 @@
 
                     <div class="amount">
                         <div class="amount-more">
-                            <i class="fa-solid fa-minus minus" ></i>
+                            <i class="fa-solid fa-minus minus"></i>
                             <p class="p">1</p>
                             <i class="fa-solid fa-plus plus"></i>
                         </div>
@@ -549,7 +549,17 @@
             })
         })
 
-        
+        // all in input
+        var allInput = document.getElementsByClassName('input')
+        document.getElementById('action').onclick = function () {
+            for (let i = 0; i < allInput.length; i++) {
+                if (this.checked) {
+                    $('input[type=checkbox]').prop('checked', true)
+                } else {
+                    $('input[type=checkbox]').prop('checked', false)
+                }
+            }
+        }
 
     </script>
 </body>
