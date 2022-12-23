@@ -1,24 +1,24 @@
 // link
-// $(document).ready(function () {
-//     function activeTab(ojb) {
-//         $('.navbar-btn li').removeClass('active')
+$(document).ready(function () {
+    function activeTab(ojb) {
+        $('.navbar-btn li, .list-item-a li, .s-s-u li, .brand-brand li, .banner li').removeClass('active')
 
-//         $(ojb).addClass('active')
+        $(ojb).addClass('active')
 
-//         let id = $(ojb).find('a').attr('href')
+        let id = $(ojb).find('a').attr('href')
 
-//         $('.body').hide();
+        $('.body').hide();
 
-//         $(id).show()
-//     }
+        $(id).show()
+    }
 
-//     $('.navbar-btn li').click(function () {
-//         activeTab(this)
-//         return false
-//     })
+    $('.navbar-btn li, .list-item-a li, .s-s-u li, .brand-brand li, .banner li').click(function () {
+        activeTab(this)
+        return false
+    })
 
-//     activeTab($('.navbar-btn .list-item:first-child'))
-// })
+    activeTab($('.navbar-btn .list-item:first-child'))
+})
 
 // $(document).ready(function () {
 //     function activeTab(ojb) {
@@ -34,6 +34,24 @@
 //     }
 
 //     $('.list-list li').click(function () {
+//         activeTab(this)
+//         return false
+//     })
+// })
+// $(document).ready(function () {
+//     function activeTab(ojb) {
+//         $('.s-s-u li').removeClass('active')
+
+//         $(ojb).addClass('active')
+
+//         let id = $(ojb).find('a').attr('href')
+
+//         $('.body').hide();
+
+//         $(id).show()
+//     }
+
+//     $('.s-s-u li').click(function () {
 //         activeTab(this)
 //         return false
 //     })
@@ -77,19 +95,43 @@
 //     })
 // })
 
+// all in input and thanh toan
+var allInput = document.getElementsByClassName('checkbox')
+var action = document.getElementById('action')
+var sumProduct = document.getElementById('sumProduct')
+var sumPrice = document.getElementById('sumPrice')
+action.onclick = function () {
+    if (this.checked) {
+        $('input[type=checkbox]').prop('checked', true)
+    } else {
+        $('input[type=checkbox]').prop('checked', false)
+    }
+}
+
+// tang tong so luong san pham
+
 // Tang so luong san pham
 let plus = document.getElementsByClassName('plus')
 let minus = document.getElementsByClassName('minus')
 let node = document.getElementsByClassName('p')
 let sum = document.getElementsByClassName('sum-product')
+let money = document.getElementsByClassName('amount-money')
+let rootPrice = document.getElementsByClassName('root-price')
+let sp, price
 for (let j = 0; j < node.length; j++) {
+
+    sp = [j]
+    price = [j]
     if (sum[j].innerHTML == 0) {
         minus[j].classList.add('P-N')
         node[j].innerHTML = sum[j].innerHTML
         plus[j].classList.add('P-N')
     }
     else {
+        let amountMoney = [j]
+        amountMoney[j] = money[j].innerHTML
         let count = [j]
+        count[j] = node[j].innerHTML
         let textStock
         var stock = document.getElementsByClassName('stock')
         plus[j].addEventListener('click', function () {
@@ -98,20 +140,21 @@ for (let j = 0; j < node.length; j++) {
                     minus[j].classList.remove('P-N')
                 ++node[j].innerHTML
                 count[j] = node[j].innerHTML
-                console.log(node[j].innerHTML)
+                money[j].innerHTML = Number(amountMoney[j]) + Number(money[j].innerHTML)
+                if (allInput[j].value == 1)
+                    check(node, money)
             }
             else if (count[j] == sum[j].innerHTML) {
                 plus[j].classList.add('P-N')
                 textStock = document.createElement('p')
-                textStock.innerText = 'Không được vượt quá sản phẩm trong kho'
+                textStock.innerText = 'Hết hàng'
                 stock[j].appendChild(textStock)
                 count[j]++
             }
+            console.log(sp[j], price[j])
         })
 
         minus[j].addEventListener('click', function () {
-            console.log(count[j])
-            console.log(sum[j].innerHTML)
             if (count[j] > sum[j].innerHTML) {
                 plus[j].classList.remove('P-N')
                 stock[j].removeChild(textStock)
@@ -119,12 +162,99 @@ for (let j = 0; j < node.length; j++) {
             }
             if (node[j].innerHTML > 0) {
                 --node[j].innerHTML
+                money[j].innerHTML = Number(money[j].innerHTML) - Number(amountMoney[j])
+                if (allInput[j].value == 1)
+                    check(node, money)
                 if (node[j].innerHTML == 0)
                     minus[j].classList.add('P-N')
             }
+            console.log(sp[j], price[j])
         })
     }
 }
+
+function Minus(node, money, i) {
+    if (allInput[i].value == 1) {
+        sp[i] = Number(node[i].innerHTML)
+        price[i] = Number(money[i].innerHTML)
+    }
+    else {
+        sp[i] = 0
+        price[i] = 0
+    }
+    sumProduct.innerHTML = sp[i]
+    sumPrice.innerHTML = price[i]
+}
+
+function Plus(node, money, i) {
+    if (allInput[i].value == 1) {
+        sp[i] = Number(node[i].innerHTML)
+        price[i] = Number(money[i].innerHTML)
+    } else {
+        sp[i] = 0
+        price[i] = 0
+    }
+    sumProduct.innerHTML = sp[i]
+    sumPrice.innerHTML = price[i]
+}
+
+
+function check(node, money) {
+    let b = 0
+    let a = 0
+    let c = 0
+    for (let i = 0; i < allInput.length; i++) {
+
+        allInput[i].addEventListener('click', function () {
+            if (allInput[i].checked)
+                allInput[i].value = '1'
+            else
+                allInput[i].value = '0'
+
+            if (allInput[i].value == 1) {
+                // if (node[i].innerHTML != 0) {
+                a += Number(allInput[i].value)
+                Plus(node, money, i)
+
+                c += Number(money[i].innerHTML)
+                if (a >= 2) {
+                    if (node[i].innerHTML >= 2) {
+                        console.log(b, sp[i])
+                        b += sp[i]
+                    }
+                } else {
+                    console.log(money[i].innerHTML)
+                    c = Number(money[i].innerHTML)
+                }
+                b += Number(node[i].innerHTML)
+            }
+            else {
+                Minus(node, money, i)
+                if (node[i].innerHTML != 0) {
+                    c -= Number(money[i].innerHTML)
+                    b--
+                    if (node[i].innerHTML >= 2) {
+                        c = Number(money[i].innerHTML) - Number(money[i].innerHTML)
+                        b = Number(node[i].innerHTML) - Number(node[i].innerHTML)
+                    }
+                    if (a >= 2) {
+                    }
+                }
+                else {
+                    c = 0
+                    b = 0
+                }
+                a--
+            }
+            console.log(a, b, c)
+
+            sumProduct.innerHTML = b
+            sumPrice.innerHTML = c
+            console.log(sp, price)
+        })
+    }
+}
+check(node, money)
 
 // focus input
 function focusInput(windowWidth) {
@@ -460,6 +590,7 @@ function listPage() {
 }
 
 function changePage(i) {
+    
     thisPage = i;
     loadItem();
 }

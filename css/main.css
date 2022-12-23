@@ -55,7 +55,6 @@
 
 .navbar-btn {
     width: 100%;
-    height: 100%;
     display: flex;
     margin-top: 22px;
     font-weight: 600;
@@ -722,7 +721,7 @@
     position: relative;
 }
 
-.body .brand {
+.brand {
     width: 100%;
     height: 50px;
     text-align: center;
@@ -972,7 +971,7 @@
 /* shopping */
 .body-sp {
     background-color: #f5f5f5;
-    padding: 84px;
+    padding: 84px 0 34px;
     margin: 0 auto;
 }
 .discount-code {
@@ -983,7 +982,7 @@
     margin: 0 auto;
     padding: 0 20px;
     background-color: #fffefb;
-    border: 1px solid rgba(224,168,0,.4);
+    border: 1px solid #e0a80066;
     cursor: pointer;
 }
 
@@ -1007,7 +1006,7 @@
     justify-content: space-between;
 }
 
-.input {
+.checkbox, .input {
     width: 22px;
     height: 22px;
     margin: 0 10px 0 0;
@@ -1024,7 +1023,6 @@
     display: flex;
     justify-content: space-between;
     color: #a2a2a2;
-
 }
 
 .box-order {
@@ -1043,20 +1041,16 @@
     align-items: center;
 }
 
-.order-left .input {
-    
-}
-
 .product-info {
     height: 80%;
     display: flex;
     align-items: center;
     /* padding: 10px 0; */
-    max-width: 350px;
+    /* max-width: 350px; */
     flex-grow: 2;
 }
 
-.product-info .img {
+.order-left .img {
     width: 100px;
     height: 100%;
 }
@@ -1069,6 +1063,7 @@
 .classify {
     flex-grow: 0;
     color: #7e7e7e;
+    font-size: 14px;
 }
 
 .classify span {
@@ -1088,7 +1083,7 @@
     text-align: center;
 }
 
-.order-right .price{
+.order-right .root-price{
     width: 18%;
 }
 
@@ -1122,7 +1117,13 @@
 .amount .stock {
     padding-top: 6px;
     font-size: 12px;
+    display: flex;
+    flex-wrap: wrap;   
     color: #ff7e3e;
+}
+
+.sum-product {
+    padding: 0 2px;
 }
 
 .amount-money {
@@ -1138,6 +1139,56 @@
     color: #ff7e3e;
     font-size: 12px;
     padding-top: 6px;
+}
+
+.buy {
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    /* box-shadow: ; */
+    text-align: right;
+    /* transition: all .1s cubic-bezier(.4,0,.6,1); */
+    background-color: #fff;
+    padding: 10px 20px;
+}
+
+.voucher {
+    text-align: right;
+    cursor: pointer;
+}
+
+.pay {
+    padding-top: 40px;
+    display: flex;
+    justify-content: right;
+}
+
+.pay-sum {
+    display: flex;
+    align-items: center;
+}
+
+.pay-sum .span {
+    color: #ff7e3e;
+}
+
+.pay-pay {
+    margin-left: 10px;
+    width: 160px;
+    background-color: #ff7e3e;
+    height: 30px;
+    border-radius: 2px;
+    text-align: center;
+    color: var(--color-footer);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.pay-pay:hover {
+    background-color: #ff712a;
 }
 
 /* footer */
@@ -1227,7 +1278,7 @@
 }
 
 .website .P-N {
-    cursor: auto;
+    cursor: no-drop;
     color: #c1c1c1;
 }
 
@@ -1518,7 +1569,7 @@
         max-width: 96%;
     }
 
-    .body .brand {
+    .brand {
         font-size: 18px;
     }
 
@@ -1653,6 +1704,47 @@
 
     .box-transport {
         font-size: 12px;
+    }
+
+    /* shopping */
+    .sp-hv:hover>.shopping {
+        display: none;
+    }
+
+    .title-table {
+        font-size: 14px;
+    }
+
+    .checkbox, .input {
+        width: 18px;
+        height: 18px;
+        min-width: 18px;
+    }
+
+    .order-left .img {
+        width: 86px;
+        height: 90%;
+    }
+
+    .product-info .header {
+        font-size: 14px;
+    }
+
+    .classify {
+        font-size: 13px;
+    }
+
+    .order-right {
+        font-size: 13px;
+    }
+
+    .amount-more i {
+        font-size: 10px;
+        max-width: 30%;
+    }
+
+    .amount-more p {
+        min-width: 40%;
     }
 
     .footer {
@@ -1840,7 +1932,7 @@
         width: 100%;
     }
 
-    .body .brand {
+    .brand {
         font-size: 14px;
     }
 
@@ -1850,5 +1942,59 @@
 
     .box-brand p {
         font-size: 10px;
+    }
+
+    .text-right {
+        display: none;
+    }
+
+    .box-order {
+        display: block;
+        height: auto;
+    }
+
+    .order-left {
+        width: 100%;
+    }
+
+    .product-info {
+        display: block;
+    }
+
+    .classify {
+        margin-left: 10px;
+        font-size: 10px;
+    }
+
+    .order-right {
+        width: 100%;
+        padding: 6px 20px 0;
+    }
+
+    .amount-money {
+        display: none;
+    }
+
+    .manipulation {
+        display: none;
+    }
+
+    .order-right .root-price {
+        color: #ff7e3e;
+    }
+
+    .order-right .amount {
+        display: flex;
+        width: 70%;
+        justify-content: space-between;
+    }
+
+    .amount-more {
+        width: 40%;
+    }
+
+    .pay-sum {
+        display: block;
+        font-size: 12px;
     }
 }
